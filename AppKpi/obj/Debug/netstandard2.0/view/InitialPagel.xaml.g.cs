@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("AppKpi.view.InitialPagel.xaml", "view/InitialPagel.xaml", typeof(global::AppKpi.view.InitialPagexaml))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("AppKpi.view.InitialPagel.xaml", "view/InitialPagel.xaml", typeof(global::AppKpi.view.InitialPage))]
 
 namespace AppKpi.view {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("view\\InitialPagel.xaml")]
-    public partial class InitialPagexaml : global::Xamarin.Forms.ContentView {
+    public partial class InitialPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(InitialPagexaml));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(InitialPage));
         }
     }
 }

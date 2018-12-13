@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 using System.Threading.Tasks;
 using AppKpi.api;
+using AppKpi.dependencyservice;
 using AppKpi.service;
 using AppKpi.view;
 
@@ -10,13 +9,17 @@ namespace AppKpi.viewmodel.load
 {
     class LoadLoginViewModel : BaseViewModel, ILoadViewModel
     {
+        private readonly IMessageService _messageService;
+        private readonly PageService _pageService;
         private readonly UserService _userService;
         private readonly ApiService _apiService;
         private readonly string _username;
         private readonly string _password;
 
-        public LoadLoginViewModel(UserService userService, ApiService apiService, string username, string password)
+        public LoadLoginViewModel(IMessageService messageService, PageService pageService, UserService userService, ApiService apiService, string username, string password)
         {
+            _messageService = messageService;
+            _pageService = pageService;
             _userService = userService;
             _apiService = apiService;
             _username = username;
@@ -33,12 +36,7 @@ namespace AppKpi.viewmodel.load
             {
                 await _userService.PersistLogin(response.Data.UserId, response.Data.Name, response.Data.Email, response.Data.Token);
 
-                var pageVm = new LoadSelectBranchViewModel(_pageService, user.OrganizationId, true);
-                await _pageService.PushAsyncAndRemoveCurrent(new LoadPage(pageVm, LoadPage.Background.WHITE));
-            }
-            else if (response.LoginAgain)
-            {
-                await _pageService.RequireLogin();
+                await _pageService.PushAsyncAndRemoveCurrent(new InitialPage());
             }
             else
             {

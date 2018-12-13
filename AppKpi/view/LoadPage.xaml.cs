@@ -1,20 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using AppKpi.viewmodel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace AppKpi.view
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoadPage : ContentPage
 	{
-		public LoadPage ()
-		{
-			InitializeComponent ();
-		}
+
+	    private ILoadViewModel ViewModel
+	    {
+	        get => BindingContext as ILoadViewModel;
+	        set => BindingContext = value;
+	    }
+
+	    public LoadPage(ILoadViewModel viewModel)
+	    {
+	        ViewModel = viewModel;
+	        InitializeComponent();
+	    }
+
+	    protected async override void OnAppearing()
+	    {
+	        base.OnAppearing();
+	        await ViewModel.Load();
+	    }
 	}
 }
