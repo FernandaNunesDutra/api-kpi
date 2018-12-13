@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:markupextensions="clr-namespace:AppKpi.markupextensions;assembly=AppKpi"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="WhiteSmoke"
+             x:Class="AppKpi.view.LoginPage">
+    <ContentPage.Content>
+        <StackLayout Margin="30,20,30,20" VerticalOptions="FillAndExpand">
+
+            <StackLayout>
+                <Image Source="{markupextensions:EmbeddedImageGeneric ResourceId=images.logo.png}" Aspect="AspectFill"/>
+            </StackLayout>
+
+            <Entry Text="{Binding Username, Mode=TwoWay}" Placeholder="Username" TextColor="#2177A3" PlaceholderColor="#2177A3" VerticalOptions="CenterAndExpand"/>
+            <Entry Text="{Binding Password, Mode=TwoWay}" Placeholder="Password" TextColor="#2177A3" PlaceholderColor="#2177A3"/>
+            <Button Text="Login" TextColor="White" BackgroundColor="#2177A3" VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
