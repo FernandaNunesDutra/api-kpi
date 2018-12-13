@@ -27,12 +27,21 @@ namespace AppKpi.service
             }
         }
 
+        public static void InitializeLogin(string username, string password)
+        {
+            _loggedUser = new User
+            {
+                Email = username,
+                Password = password
+            };
+        }
+
         public UserService(SQLiteAsyncConnection connection)
         {
             _connection = connection;
         }
 
-        public async Task PersistLogin(int id, int organizationId, string name, string email, string token)
+        public async Task PersistLogin(int id, string name, string email, string token)
         {
             _loggedUser.UserId = id;
             _loggedUser.Name = name;

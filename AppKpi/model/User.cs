@@ -17,6 +17,10 @@ namespace AppKpi.model
         [JsonProperty("email")]
         public string Email { get; set; }
 
+        [Ignore]
+        [JsonProperty("password")]
+        public string Password { get; set; }
+
         [Column("token")]
         [JsonProperty("token")]
         public string Token { get; set; }
