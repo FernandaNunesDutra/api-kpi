@@ -13,8 +13,8 @@
             </StackLayout>
 
             <Entry Text="{Binding Username, Mode=TwoWay}" Placeholder="Username" TextColor="#2177A3" PlaceholderColor="#2177A3" VerticalOptions="CenterAndExpand"/>
-            <Entry Text="{Binding Password, Mode=TwoWay}" Placeholder="Password" TextColor="#2177A3" PlaceholderColor="#2177A3"/>
-            <Button Text="Login" TextColor="White" BackgroundColor="#2177A3" VerticalOptions="EndAndExpand"  Command="{Binding VerifyLoginCommand}"/>
+            <Entry Text="{Binding Password, Mode=TwoWay}" Placeholder="Password" TextColor="#2177A3" PlaceholderColor="#2177A3" IsPassword="true"/>
+            <Button Text="Login" TextColor="White" BackgroundColor="#2177A3" VerticalOptions="EndAndExpand"  Command="{Binding LoginCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

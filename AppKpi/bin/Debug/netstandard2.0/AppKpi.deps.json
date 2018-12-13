@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "c7cbe4f0f9fe9ea1a142c584ee737de04574b642"
+    "signature": "a075069710c0117aa2a8c84a43bad93a7a02d10e"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,6 +11,7 @@
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.1",
+          "Xam.Plugin.Connectivity": "3.2.0",
           "Xamarin.Forms": "3.3.0.912540",
           "sqlite-net-pcl": "1.5.231"
         },
@@ -68,6 +69,21 @@
           "lib/netstandard1.1/SQLitePCLRaw.core.dll": {
             "assemblyVersion": "1.1.11.121",
             "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Xam.Plugin.Connectivity/3.2.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Plugin.Connectivity.Abstractions.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.0.0"
+          },
+          "lib/netstandard1.0/Plugin.Connectivity.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.0.0"
           }
         }
       },
@@ -136,6 +152,13 @@
       "sha512": "sha512-bWiOso10I1vDuc5rbzT69LQT0+oXfYnoqx8vKJ8zim/CJ4ytSd20QNTE/FE0dvWEgXGnvDp7gGJFu6PeWnhx9g==",
       "path": "sqlitepclraw.core/1.1.11",
       "hashPath": "sqlitepclraw.core.1.1.11.nupkg.sha512"
+    },
+    "Xam.Plugin.Connectivity/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V0IKUjLnWO4zl1VI/7Keclez5kk21PIpVUqacbMtbl1Ky7PrUNUOrO8Xmfrxn5E38ihzrmgGpuC6TXCwL3Sl+Q==",
+      "path": "xam.plugin.connectivity/3.2.0",
+      "hashPath": "xam.plugin.connectivity.3.2.0.nupkg.sha512"
     },
     "Xamarin.Forms/3.3.0.912540": {
       "type": "package",

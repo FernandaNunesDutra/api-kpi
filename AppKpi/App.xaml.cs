@@ -1,5 +1,10 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using AppKpi.dependencyservice;
+using AppKpi.model;
 using AppKpi.view;
+using SQLite;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,7 +17,20 @@ namespace AppKpi
         {
             InitializeComponent();
 
+            
             MainPage = new NavigationPage(new LoginPage());
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+            var connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+            CreateTables(connection);
+        }
+
+        private async Task CreateTables(SQLiteAsyncConnection connection)
+        {
+            await connection.CreateTableAsync<User>();
         }
     }
 }

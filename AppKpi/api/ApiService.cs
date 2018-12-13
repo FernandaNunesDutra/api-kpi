@@ -7,7 +7,8 @@ namespace AppKpi.api
 {
     public class ApiService
     {
-        private static string URL_POST_LOGIN = "";
+        private static string URL_BASE = "http://indicadoresapi.azurewebsites.net/api/";
+        private static string URL_POST_LOGIN = URL_BASE + "acesso/logar";
         private static RequestService _requestService;
 
         public ApiService(SQLiteAsyncConnection connection)
