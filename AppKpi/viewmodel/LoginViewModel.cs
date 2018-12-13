@@ -4,6 +4,7 @@ using AppKpi.dependencyservice;
 using AppKpi.service;
 using AppKpi.view;
 using AppKpi.viewmodel.load;
+using Xamarin.Forms;
 
 namespace AppKpi.viewmodel
 {
@@ -31,13 +32,14 @@ namespace AppKpi.viewmodel
 
         public ICommand LoginCommand { get; private set; }
 
-
-        public LoginViewModel(IMessageService messageService, PageService pageService, UserService userService, ApiService apiService, )
+        public LoginViewModel(IMessageService messageService, PageService pageService, UserService userService, ApiService apiService)
         {
             _messageService = messageService;
             _pageService = pageService;
             _userService = userService;
             _apiService = apiService;
+
+            LoginCommand = new Command(VerifyLogin);
         }
 
         private async void VerifyLogin()
