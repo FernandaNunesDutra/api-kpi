@@ -39,9 +39,22 @@ namespace AppKpi.viewmodel.load
             }
         }
 
+        private SKColor[] GetColors()
+        {
+            var colors = new SKColor[5];
+            colors[0] = (SKColor.Parse("#2c3e50"));
+            colors[1] = (SKColor.Parse("#77d065"));
+            colors[2] = (SKColor.Parse("#b455b6"));
+            colors[3] = (SKColor.Parse("#3498db"));
+            colors[4] = (SKColor.Parse("#3168db"));
+
+            return colors;
+        }
 
         private List<Microcharts.Entry> ToMicrochartEntry(List<ChartEntry> items)
         {
+            var index = 0;
+            var colors = GetColors();
             var entries = new List<Microcharts.Entry>();
 
             foreach (var item in items)
@@ -50,9 +63,11 @@ namespace AppKpi.viewmodel.load
                 entries.Add(new Microcharts.Entry(value)
                 {
                     Label = item.Description,
-                    ValueLabel = value.ToString(),
-                    Color = SKColor.Parse("#266489")
+                    ValueLabel = item.Value,
+                    Color = colors[index]
                 });
+
+                index++;
             }
 
             return entries;

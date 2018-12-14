@@ -40,16 +40,32 @@ namespace AppKpi.viewmodel
                     };
                     break;
                 case ChartType.DONUT:
-                    return new DonutChart() { Entries = entries };
+                    return new DonutChart()
+                    {
+                        Entries = entries,
+                        LabelTextSize = 30,
+                    };
                     break;
                 case ChartType.LINE:
-                    return new LineChart() { Entries = entries };
+                    return new LineChart()
+                    {
+                        Entries = entries,
+                        LabelTextSize = 30,
+                    };
                     break;
                 case ChartType.POINT:
-                    return new PointChart() { Entries = entries };
+                    return new PointChart()
+                    {
+                        Entries = entries,
+                        LabelTextSize = 30,
+                    };
                     break;
                 case ChartType.RADIAL:
-                    return new RadialGaugeChart() { Entries = entries };
+                    return new RadialGaugeChart()
+                    {
+                        Entries = entries,
+                        LabelTextSize = 30,
+                    };
                     break;
             }
 

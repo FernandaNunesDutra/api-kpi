@@ -16,7 +16,11 @@
                         <ViewCell>
                             <StackLayout HorizontalOptions="FillAndExpand">
                                 <Frame BackgroundColor="#2177A3" Style="{StaticResource RoundFrame}" HorizontalOptions="FillAndExpand">
-                                    <Label TextColor="White" Text="{Binding GroupTitle}" VerticalOptions="Center" FontSize="Default" FontAttributes="Bold"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label TextColor="White" Text="{Binding GroupTitle}" VerticalOptions="Center" FontSize="Default" FontAttributes="Bold"/>
+                                        <Label TextColor="White" Text="Geral" FontSize="Default" HorizontalOptions="EndAndExpand"/>
+                                        <Label TextColor="White" Text="Atual" FontSize="Default" Margin="10,0,0,0"/>
+                                    </StackLayout>
                                 </Frame>
                             </StackLayout>
                         </ViewCell>
@@ -31,7 +35,7 @@
                                         <StackLayout.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding ItemCommand}" CommandParameter="{Binding .}" />
                                         </StackLayout.GestureRecognizers>
-                                        <Label Text="{Binding Title}" FontSize="Default" />
+                                        <Label Text="{Binding Title}" FontSize="Default"/>
                                         <Label Text="{Binding General}" FontSize="Default" HorizontalOptions="EndAndExpand"/>
                                         <Label Text="{Binding Current}" FontSize="Default" TextColor="#2177A3"/>
                                     </StackLayout>
@@ -43,5 +47,5 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-  </ContentPage.Content>
+    </ContentPage.Content>
 </view:BasePage>
