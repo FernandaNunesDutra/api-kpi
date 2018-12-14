@@ -15,7 +15,7 @@
             </StackLayout>
             <Entry Text="{Binding Username, Mode=TwoWay}" Placeholder="Username" TextColor="#2177A3" PlaceholderColor="#2177A3" VerticalOptions="EndAndExpand"/>
             <Entry Text="{Binding Password, Mode=TwoWay}" Placeholder="Password" TextColor="#2177A3" PlaceholderColor="#2177A3" IsPassword="true"/>
-            <Button Text="Login" TextColor="White" BackgroundColor="#2177A3" VerticalOptions="EndAndExpand" Command="{Binding LoginCommand}"/>
+            <Button Text="Login" TextColor="White" BackgroundColor="#F45C0A" HorizontalOptions="FillAndExpand" Command="{Binding LoginCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </view:BasePage>

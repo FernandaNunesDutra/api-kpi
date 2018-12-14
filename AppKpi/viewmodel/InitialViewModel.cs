@@ -8,6 +8,7 @@ using AppKpi.viewmodel.load;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace AppKpi.viewmodel
@@ -19,10 +20,14 @@ namespace AppKpi.viewmodel
         private ApiService _apiService;
         private List<Group> _groups;
 
+        public string Company { get; set; }
         public ObservableCollection<ListViewGroup<ListViewItem>> Groups { get; set; }
+
+        public ICommand LogoutCommand { get; private set; }
 
         public InitialViewModel(IMessageService messageService, PageService pageService, ApiService apiService, List<Group> groups)
         {
+            Company = "CD Cremer";
             Groups = new ObservableCollection<ListViewGroup<ListViewItem>>();
 
             _messageService = messageService;
@@ -31,39 +36,12 @@ namespace AppKpi.viewmodel
             _groups = groups;
 
             GoBackCommand = new Command(GoBack);
+            LogoutCommand = new Command(Logout);
         }
 
         public async void Load()
         {
             Groups.Clear();
-
-            //var items = new List<GroupItem>
-            //{
-            //    new GroupItem
-            //    {
-            //        DashboardId = 1,
-            //        Current = "15",
-            //        Indicator = "TESTE 1",
-            //        General = "10",
-            //        Type = "1"
-            //    },
-            //    new GroupItem
-            //    {
-            //        DashboardId = 2,
-            //        Current = "18",
-            //        Indicator = "TESTE 2",
-            //        General = "20",
-            //        Type = "2"
-            //    },
-            //    new GroupItem
-            //    {
-            //        DashboardId = 3,
-            //        Current = "21",
-            //        Indicator = "TESTE 3",
-            //        General = "30",
-            //        Type = "3"
-            //    },
-            //};
 
             foreach (var group in _groups)
             {
@@ -101,6 +79,11 @@ namespace AppKpi.viewmodel
         {
             var loadVm = new LoadChartViewModel(_messageService, _pageService, _apiService, item.Id.Value);
             await _pageService.PushAsync(new LoadPage(loadVm));
+        }
+
+        private async void Logout()
+        {
+           await _pageService.PushAsyncAndRemoveCurrent(new LoginPage());
         }
 
         private void GoBack()

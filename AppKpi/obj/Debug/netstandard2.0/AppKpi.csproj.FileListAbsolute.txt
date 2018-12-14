@@ -13,3 +13,4 @@ C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi\obj\Debug\netstandard2.0\AppKpi
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi\obj\Debug\netstandard2.0\AppKpi.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi\obj\Debug\netstandard2.0\AppKpi.pdb
+C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi\obj\Debug\netstandard2.0\AppKpi.csprojAssemblyReference.cache

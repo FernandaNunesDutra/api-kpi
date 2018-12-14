@@ -10,6 +10,7 @@
 
     <ContentPage.Content>
         <StackLayout Margin="10,15,10,15" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Label Text="{Binding Company}" TextColor="#2177A3" FontSize="Large" FontAttributes="Bold" />
             <ListView  IsGroupingEnabled="True" HasUnevenRows="True" SeparatorVisibility="None" ItemsSource="{Binding Groups}" GroupDisplayBinding="{Binding GroupTitle}" >
                 <ListView.GroupHeaderTemplate>
                     <DataTemplate>
@@ -46,6 +47,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button Text="Logout" TextColor="#F45C0A" BackgroundColor="Transparent" FontSize="Small" VerticalOptions="Fill" HorizontalOptions="EndAndExpand" Command="{Binding LogoutCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </view:BasePage>
