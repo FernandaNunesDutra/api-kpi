@@ -15,13 +15,15 @@ namespace AppKpi.viewmodel.load
         private readonly PageService _pageService;
         private readonly ApiService _apiService;
         private int _idChart;
+        private string _name;
 
-        public LoadChartViewModel(IMessageService messageService, PageService pageService, ApiService apiService, int idChart)
+        public LoadChartViewModel(IMessageService messageService, PageService pageService, ApiService apiService, int idChart, string name)
         {
             _messageService = messageService;
             _pageService = pageService;
             _apiService = apiService;
             _idChart = idChart;
+            _name = name;
         }
 
         public async Task Load()
@@ -30,7 +32,7 @@ namespace AppKpi.viewmodel.load
 
             if (response.Success)
             {
-                await _pageService.PushAsyncAndRemoveCurrent(new ChartPage(ToMicrochartEntry(response.Data)));
+                await _pageService.PushAsyncAndRemoveCurrent(new ChartPage(ToMicrochartEntry(response.Data), _name));
             }
             else
             {
@@ -44,9 +46,9 @@ namespace AppKpi.viewmodel.load
             var colors = new SKColor[5];
             colors[0] = (SKColor.Parse("#2c3e50"));
             colors[1] = (SKColor.Parse("#77d065"));
-            colors[2] = (SKColor.Parse("#b455b6"));
-            colors[3] = (SKColor.Parse("#3498db"));
-            colors[4] = (SKColor.Parse("#3168db"));
+            colors[2] = (SKColor.Parse("#2177A3"));
+            colors[3] = (SKColor.Parse("#FC7C00"));
+            colors[4] = (SKColor.Parse("#6C93A8"));
 
             return colors;
         }
@@ -59,6 +61,8 @@ namespace AppKpi.viewmodel.load
 
             foreach (var item in items)
             {
+                if (index > 4) break;
+
                 var value = int.Parse(decimal.Parse(item.Value).ToString());
                 entries.Add(new Microcharts.Entry(value)
                 {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using AppKpi.dependencyservice;
 using Microcharts;
+using SkiaSharp;
 using Xamarin.Forms;
 
 namespace AppKpi.viewmodel
@@ -19,9 +20,10 @@ namespace AppKpi.viewmodel
     {
         private readonly IPageService _pageService;
         public Chart Chart { get; set; }
-
-        public ChartViewModel(List<Microcharts.Entry> entries, ChartType type, IPageService pageService)
+        public string Name { get; set; }
+        public ChartViewModel(List<Microcharts.Entry> entries, ChartType type, IPageService pageService, string name)
         {
+            Name = name;
             Chart = ChooseChart(type, entries);
             GoBackCommand = new Command(GoBack);
             _pageService = pageService;
@@ -35,36 +37,41 @@ namespace AppKpi.viewmodel
                     return new BarChart()
                     {
                         Entries = entries,
-                        LabelTextSize = 30,
-                       // BarAreaAlpha = Byte.Parse("1"),
+                        LabelTextSize = 35,
+                        BackgroundColor = SKColors.Transparent,
+                        BarAreaAlpha = Byte.Parse("1"),
                     };
                     break;
                 case ChartType.DONUT:
                     return new DonutChart()
                     {
                         Entries = entries,
-                        LabelTextSize = 30,
+                        LabelTextSize = 35,
+                        BackgroundColor = SKColors.Transparent,
                     };
                     break;
                 case ChartType.LINE:
                     return new LineChart()
                     {
                         Entries = entries,
-                        LabelTextSize = 30,
+                        LabelTextSize = 35,
+                        BackgroundColor = SKColors.Transparent,
                     };
                     break;
                 case ChartType.POINT:
                     return new PointChart()
                     {
                         Entries = entries,
-                        LabelTextSize = 30,
+                        LabelTextSize = 35,
+                        BackgroundColor = SKColors.Transparent,
                     };
                     break;
                 case ChartType.RADIAL:
                     return new RadialGaugeChart()
                     {
                         Entries = entries,
-                        LabelTextSize = 30,
+                        LabelTextSize = 35,
+                        BackgroundColor = SKColors.Transparent,
                     };
                     break;
             }

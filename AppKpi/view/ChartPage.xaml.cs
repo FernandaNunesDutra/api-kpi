@@ -7,10 +7,10 @@ namespace AppKpi.view
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ChartPage : BasePage<ChartViewModel>
-	{	public ChartPage (List<Microcharts.Entry> entries)
+	{	public ChartPage (List<Microcharts.Entry> entries, string name)
 		{
 			InitializeComponent();
-		    ViewModel = new ChartViewModel(entries, ChartType.BAR, new PageService());
+		    ViewModel = new ChartViewModel(entries, ChartType.LINE, new PageService(), name);
         }
     }
 }

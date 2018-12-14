@@ -22,7 +22,6 @@ namespace AppKpi.viewmodel
 
         public string Company { get; set; }
         public ObservableCollection<ListViewGroup<ListViewItem>> Groups { get; set; }
-
         public ICommand LogoutCommand { get; private set; }
 
         public InitialViewModel(IMessageService messageService, PageService pageService, ApiService apiService, List<Group> groups)
@@ -77,7 +76,7 @@ namespace AppKpi.viewmodel
 
         private async void GetDetailKpi(ListViewItem item)
         {
-            var loadVm = new LoadChartViewModel(_messageService, _pageService, _apiService, item.Id.Value);
+            var loadVm = new LoadChartViewModel(_messageService, _pageService, _apiService, item.Id.Value, item.Title);
             await _pageService.PushAsync(new LoadPage(loadVm));
         }
 

@@ -4,7 +4,7 @@ namespace AppKpi.api.response.model
 {
     public class ChartEntry
     {
-        [JsonProperty("provider")]
+        [JsonProperty("label")]
         public string Description { get; set; }
 
         [JsonProperty("percentage")]

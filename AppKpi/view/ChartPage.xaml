@@ -9,7 +9,8 @@
              BackgroundColor="WhiteSmoke"
              x:Class="AppKpi.view.ChartPage">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10,10,10,10">
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10,10,10,10">
+            <Label Text="{Binding Name}" TextColor="#2177A3" FontSize="Large" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
             <forms:ChartView x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Chart="{Binding Chart}"/>
         </StackLayout>
     </ContentPage.Content>
