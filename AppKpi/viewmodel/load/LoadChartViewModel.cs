@@ -26,17 +26,18 @@ namespace AppKpi.viewmodel.load
 
         public async Task Load()
         {
-            var response = await _apiService.GetChartData(_idChart);
+            await _pageService.PushAsync(new ChartPage(ToMicrochartEntry(new List<ChartEntry>())));
+            //var response = await _apiService.GetChartData(_idChart);
 
-            if (response.Success)
-            {
-                await _pageService.PushAsyncAndRemoveCurrent(new ChartPage(ToMicrochartEntry(response.Data)));
-            }
-            else
-            {
-                _messageService.ShortAlert(response.ErrorDescription);
-                await _pageService.PopAsync();
-            }
+            //if (response.Success)
+            //{
+            //    await _pageService.PushAsyncAndRemoveCurrent(new ChartPage(ToMicrochartEntry(response.Data)));
+            //}
+            //else
+            //{
+            //    _messageService.ShortAlert(response.ErrorDescription);
+            //    await _pageService.PopAsync();
+            //}
         }
 
 

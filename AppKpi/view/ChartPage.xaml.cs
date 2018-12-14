@@ -24,5 +24,15 @@ namespace AppKpi.view
 			InitializeComponent();
 		    ViewModel = new ChartViewModel(entries, ChartType.BAR);
         }
-	}
+
+	    protected override bool OnBackButtonPressed()
+	    {
+	        if (ViewModel.GoBackCommand != null)
+	            ViewModel.GoBackCommand.Execute(null);
+	        else
+	            return base.OnBackButtonPressed();
+
+	        return true;
+	    }
+    }
 }

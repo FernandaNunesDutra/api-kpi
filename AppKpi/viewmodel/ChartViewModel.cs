@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microcharts;
 
 namespace AppKpi.viewmodel
@@ -12,7 +13,7 @@ namespace AppKpi.viewmodel
         RADIAL
     }
 
-    public class ChartViewModel
+    public class ChartViewModel : BaseViewModel
     {
         public Chart Chart { get; set; }
 
@@ -26,7 +27,12 @@ namespace AppKpi.viewmodel
             switch (type)
             {
                 case ChartType.BAR:
-                    return new BarChart() { Entries = entries };
+                    return new BarChart()
+                    {
+                        Entries = entries,
+                        LabelTextSize = 30,
+                        BarAreaAlpha = Byte.Parse("2")
+                    };
                     break;
                 case ChartType.DONUT:
                     return new DonutChart() { Entries = entries };

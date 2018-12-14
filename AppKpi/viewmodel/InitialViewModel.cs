@@ -26,10 +26,13 @@ namespace AppKpi.viewmodel
         public InitialViewModel(IMessageService messageService, PageService pageService, ApiService apiService, List<Group> groups)
         {
             Groups = new ObservableCollection<ListViewGroup<ListViewItem>>();
+
             _messageService = messageService;
             _pageService = pageService;
             _apiService = apiService;
             _groups = groups;
+
+            GoBackCommand = new Command(GoBack);
         }
 
         public async void Load()
@@ -101,6 +104,11 @@ namespace AppKpi.viewmodel
         {
             var loadVm = new LoadChartViewModel(_messageService, _pageService, _apiService, item.Id.Value);
             await _pageService.PushAsyncAndRemoveCurrent(new LoadPage(loadVm));
+        }
+
+        private async void GoBack()
+        {
+            await _pageService.PopAsync();
         }
     }
 }
