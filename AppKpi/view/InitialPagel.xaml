@@ -4,9 +4,41 @@
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="WhiteSmoke"
              x:Class="AppKpi.view.InitialPage">
+
     <ContentPage.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
+        <StackLayout Margin="10,15,10,15" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <ListView  IsGroupingEnabled="True" HasUnevenRows="True" SeparatorVisibility="None" ItemsSource="{Binding Groups}" GroupDisplayBinding="{Binding GroupTitle}" >
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HorizontalOptions="FillAndExpand">
+                                <Frame BackgroundColor="#2177A3" Style="{StaticResource RoundFrame}" HorizontalOptions="FillAndExpand">
+                                    <Label TextColor="White" Text="{Binding GroupTitle}" VerticalOptions="Center" FontSize="Default" FontAttributes="Bold"/>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Style="{StaticResource RoundFrame}">
+                                <StackLayout Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                        <!--<StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding ItemCommand}" CommandParameter="{Binding .}" />
+                                        </StackLayout.GestureRecognizers>-->
+                                        <Label Text="{Binding Title}" FontSize="Default" />
+                                        <Label Text="{Binding General}" FontSize="Default" HorizontalOptions="EndAndExpand"/>
+                                        <Label Text="{Binding Current}" FontSize="Default" TextColor="#2177A3"/>
+                                    </StackLayout>
+                                    <BoxView Style="{StaticResource HorizontalLineBoxView}"/>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
   </ContentPage.Content>
 </ContentPage>

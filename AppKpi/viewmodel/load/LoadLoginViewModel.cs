@@ -34,9 +34,10 @@ namespace AppKpi.viewmodel.load
 
             if (response.Success)
             {
-                await _userService.PersistLogin(response.Data.UserId, response.Data.Name, response.Data.Email, response.Data.Token);
+                await _userService.PersistLogin(response.Data.UserId, response.Data.Name, response.Data.Login, response.Data.Token);
+                var loadVm = new LoadInitialViewModel(_messageService, _pageService, _userService, _apiService);
 
-                await _pageService.PushAsyncAndRemoveCurrent(new InitialPage());
+                await _pageService.PushAsyncAndRemoveCurrent(new LoadPage(loadVm));
             }
             else
             {

@@ -31,7 +31,7 @@ namespace AppKpi.service
         {
             _loggedUser = new User
             {
-                Email = username,
+                Login = username,
                 Password = password
             };
         }
@@ -45,13 +45,13 @@ namespace AppKpi.service
         {
             _loggedUser.UserId = id;
             _loggedUser.Name = name;
-            _loggedUser.Email = email;
+            _loggedUser.Login = email;
             _loggedUser.Token = token;
 
             Application.Current.Properties[PROP_USER_ID_PROPERTY] = _loggedUser.UserId;
             Application.Current.Properties[PROP_USER_NAME_PROPERTY] = _loggedUser.Name;
             Application.Current.Properties[PROP_USER_TOKEN_PROPERTY] = _loggedUser.Token;
-            Application.Current.Properties[PROP_USER_EMAIL_PROPERTY] = _loggedUser.Email;
+            Application.Current.Properties[PROP_USER_EMAIL_PROPERTY] = _loggedUser.Login;
 
             await StoreUser(_loggedUser);
         }
@@ -78,7 +78,7 @@ namespace AppKpi.service
                 UserId = (int)Application.Current.Properties[PROP_USER_ID_PROPERTY],
                 Name = (string)Application.Current.Properties[PROP_USER_NAME_PROPERTY],
                 Token = (string)Application.Current.Properties[PROP_USER_TOKEN_PROPERTY],
-                Email = (string)Application.Current.Properties[PROP_USER_EMAIL_PROPERTY],
+                Login = (string)Application.Current.Properties[PROP_USER_EMAIL_PROPERTY],
             };
         }
 

@@ -20,8 +20,7 @@ namespace AppKpi.view
         public LoginPage()
 	    {
 	        InitializeComponent();
-
-            
+   
 	        var connection = DependencyService.Get<ISQLiteDb>().GetConnection();
 	        var message = DependencyService.Get<IMessageService>();
             var userService = new UserService(connection);

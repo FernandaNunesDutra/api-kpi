@@ -10,15 +10,15 @@ namespace AppKpi.model
         public int UserId { get; set; }
 
         [Column("name")]
-        [JsonProperty("nome")]
+        [JsonProperty("name")]
         public string Name { get; set; }
 
-        [Column("usuario")]
-        [JsonProperty("usuario")]
-        public string Email { get; set; }
+        [Column("user")]
+        [JsonProperty("user")]
+        public string Login { get; set; }
 
         [Ignore]
-        [JsonProperty("senha")]
+        [JsonProperty("password")]
         public string Password { get; set; }
 
         [Column("token")]

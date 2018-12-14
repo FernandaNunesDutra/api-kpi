@@ -7,11 +7,9 @@
              x:Class="AppKpi.view.LoginPage">
     <ContentPage.Content>
         <StackLayout Margin="30,20,30,20" VerticalOptions="FillAndExpand">
-
             <StackLayout>
                 <Image Source="{markupextensions:EmbeddedImageGeneric ResourceId=images.logo.png}" Aspect="AspectFill"/>
             </StackLayout>
-
             <Entry Text="{Binding Username, Mode=TwoWay}" Placeholder="Username" TextColor="#2177A3" PlaceholderColor="#2177A3" VerticalOptions="CenterAndExpand"/>
             <Entry Text="{Binding Password, Mode=TwoWay}" Placeholder="Password" TextColor="#2177A3" PlaceholderColor="#2177A3" IsPassword="true"/>
             <Button Text="Login" TextColor="White" BackgroundColor="#2177A3" VerticalOptions="EndAndExpand"  Command="{Binding LoginCommand}"/>

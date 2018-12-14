@@ -166,5 +166,37 @@ namespace AppKpi.api
                 ErrorDescription = "Aplicativo Offline"
             };
         }
+
+        public async Task<Response<T>> GetData<T>(string url, bool ignoreBuffer = false)
+        {
+            if (!CrossConnectivity.Current.IsConnected)
+            {
+                return BuildOfflineResponse<T>();
+            }
+
+            var uri = new Uri(url);
+            var requestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            try
+            {
+                HttpResponseMessage response;
+                if (ignoreBuffer)
+                {
+                    var client = new HttpClient { Timeout = new TimeSpan(0, 10, 0) };
+                    response = await client.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead);
+                }
+                else response = await _client.SendAsync(requestMessage);
+
+                return await BuildResponse<T>(response);
+            }
+            catch (Exception e)
+            {
+                return new Response<T>
+                {
+                    Success = false,
+                    ErrorDescription = "Erro desconhecido"
+                };
+            }
+        }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using AppKpi.api.response.model;
 using AppKpi.dependencyservice;
 using AppKpi.model;
 using AppKpi.view;
@@ -17,8 +19,8 @@ namespace AppKpi
         {
             InitializeComponent();
 
-            
-            MainPage = new NavigationPage(new LoginPage());
+
+            MainPage = new NavigationPage(new InitialPage(new List<Group>()));
         }
 
         protected override void OnStart()

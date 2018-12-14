@@ -29,7 +29,6 @@ namespace AppKpi.viewmodel
             set => SetValue(ref _password, value);
         }
 
-
         public ICommand LoginCommand { get; private set; }
 
         public LoginViewModel(IMessageService messageService, PageService pageService, UserService userService, ApiService apiService)
