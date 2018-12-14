@@ -1,6 +1,7 @@
-﻿using AppKpi.service.interfaceservice;
+﻿
 using System.Linq;
 using System.Threading.Tasks;
+using AppKpi.dependencyservice;
 using Xamarin.Forms;
 
 namespace AppKpi.service
@@ -70,20 +71,5 @@ namespace AppKpi.service
                 Page.Navigation.RemovePage(Page.Navigation.NavigationStack[Page.Navigation.NavigationStack.Count - 2]);
             }
         }
-
-        //public async Task RequireLogin()
-        //{
-        //    await DisplayAlert(AppResources.Lbl_Information, AppResources.Lbl_LoginAgain, AppResources.Lbl_Ok);
-        //    await PushAsync(new LoginPage());
-        //    ClearNavigationStack();
-        //}
-
-        //public async Task<string> DisplayActionSheet(string title, string[] buttons, string cancel = null, string destruction = null)
-        //{
-        //    if (cancel == null)
-        //        cancel = AppResources.Lbl_Cancel;
-
-        //    return await Page.DisplayActionSheet(title, cancel, destruction, buttons);
-        //}
     }
 }

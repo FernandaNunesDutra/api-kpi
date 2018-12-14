@@ -14,7 +14,7 @@ namespace AppKpi.view {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("view\\ChartPage.xaml")]
-    public partial class ChartPage : global::Xamarin.Forms.ContentPage {
+    public partial class ChartPage : global::AppKpi.view.BasePage<global::AppKpi.viewmodel.ChartViewModel> {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Microcharts.Forms.ChartView Chart;

@@ -9,14 +9,8 @@ using Xamarin.Forms.Xaml;
 namespace AppKpi.view
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LoginPage : ContentPage
-	{
-	    public LoginViewModel ViewModel
-	    {
-	        get => BindingContext as LoginViewModel;
-	        set => BindingContext = value;
-	    }
-
+	public partial class LoginPage : BasePage<LoginViewModel>
+    {
         public LoginPage()
 	    {
 	        InitializeComponent();

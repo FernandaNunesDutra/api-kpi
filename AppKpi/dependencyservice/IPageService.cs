@@ -1,12 +1,11 @@
 ﻿using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace AppKpi.service.interfaceservice
+namespace AppKpi.dependencyservice
 {
     public interface IPageService
     {
         Page Page { get; }
-
         Task PushAsync(Page page);
         Task PushAsyncAndRemoveCurrent(Page page);
         Task PopAsync();
@@ -14,7 +13,5 @@ namespace AppKpi.service.interfaceservice
         Task<bool> DisplayAlert(string title, string message, string accept, string cancel, bool requiresAttention = false, bool isError = false);
         void ClearNavigationStack();
         void RemovePages(int num);
-        //Task RequireLogin();
-        //Task<string> DisplayActionSheet(string title, string[] buttons, string cancel, string destruction);
     }
 }

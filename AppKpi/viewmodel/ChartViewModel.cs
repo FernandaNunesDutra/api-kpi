@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using AppKpi.dependencyservice;
 using Microcharts;
+using Xamarin.Forms;
 
 namespace AppKpi.viewmodel
 {
@@ -15,11 +17,14 @@ namespace AppKpi.viewmodel
 
     public class ChartViewModel : BaseViewModel
     {
+        private readonly IPageService _pageService;
         public Chart Chart { get; set; }
 
-        public ChartViewModel(List<Microcharts.Entry> entries, ChartType type)
+        public ChartViewModel(List<Microcharts.Entry> entries, ChartType type, IPageService pageService)
         {
             Chart = ChooseChart(type, entries);
+            GoBackCommand = new Command(GoBack);
+            _pageService = pageService;
         }
 
         private Chart ChooseChart(ChartType type, List<Microcharts.Entry> entries)
@@ -31,7 +36,7 @@ namespace AppKpi.viewmodel
                     {
                         Entries = entries,
                         LabelTextSize = 30,
-                        BarAreaAlpha = Byte.Parse("2")
+                       // BarAreaAlpha = Byte.Parse("1"),
                     };
                     break;
                 case ChartType.DONUT:
@@ -49,6 +54,11 @@ namespace AppKpi.viewmodel
             }
 
             return null;
+        }
+
+        private async void GoBack()
+        {
+            await _pageService.PopAsync();
         }
     }
 }

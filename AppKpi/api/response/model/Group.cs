@@ -9,7 +9,7 @@ namespace AppKpi.api.response.model
         [JsonProperty("description")]
         public string Description { get; set; }
 
-        [JsonProperty("items")]
+        [JsonProperty("itens")]
         public List<GroupItem> Items{ get; set; }
     }
 }

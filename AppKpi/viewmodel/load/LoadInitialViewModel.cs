@@ -12,17 +12,19 @@ namespace AppKpi.viewmodel.load
         private readonly IMessageService _messageService;
         private readonly PageService _pageService;
         private readonly ApiService _apiService;
+        private int _todos;
 
         public LoadInitialViewModel(IMessageService messageService, PageService pageService, UserService userService, ApiService apiService)
         {
             _messageService = messageService;
             _pageService = pageService;
             _apiService = apiService;
+            _todos = 0;
         }
 
         public async Task Load()
         {
-            var response = await _apiService.GetDashboard(0);
+            var response = await _apiService.GetDashboard(_todos);
 
             if (response.Success)
             {

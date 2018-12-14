@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+<view:BasePage x:TypeArguments="viewmodel:InitialViewModel" 
+             xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:AppKpi.view;assembly=AppKpi"
+             xmlns:viewmodel="clr-namespace:AppKpi.viewmodel;assembly=AppKpi"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="WhiteSmoke"
              x:Class="AppKpi.view.InitialPage">
@@ -41,4 +44,4 @@
             </ListView>
         </StackLayout>
   </ContentPage.Content>
-</ContentPage>
+</view:BasePage>

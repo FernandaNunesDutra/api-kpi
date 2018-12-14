@@ -3,13 +3,11 @@ using AppKpi.api.response.model;
 using AppKpi.dependencyservice;
 using AppKpi.model;
 using AppKpi.service;
+using AppKpi.view;
+using AppKpi.viewmodel.load;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using AppKpi.view;
-using AppKpi.viewmodel.load;
-using Microcharts;
-using SkiaSharp;
 using Xamarin.Forms;
 
 namespace AppKpi.viewmodel
@@ -39,39 +37,38 @@ namespace AppKpi.viewmodel
         {
             Groups.Clear();
 
-            var items = new List<GroupItem>
-            {
-                new GroupItem
-                {
-                    DashboardId = 1,
-                    Current = "15",
-                    Indicator = "TESTE 1",
-                    General = "10",
-                    Type = "1"
-                },
-                new GroupItem
-                {
-                    DashboardId = 2,
-                    Current = "18",
-                    Indicator = "TESTE 2",
-                    General = "20",
-                    Type = "2"
-                },
-                new GroupItem
-                {
-                    DashboardId = 3,
-                    Current = "21",
-                    Indicator = "TESTE 3",
-                    General = "30",
-                    Type = "3"
-                },
-            };
-
-            //foreach (var group in _groups)
+            //var items = new List<GroupItem>
             //{
-            //Groups.Add(await CreateGroup(group.Description, group.Items));
-            Groups.Add(await CreateGroup("ENTRADA", items));
-            //}
+            //    new GroupItem
+            //    {
+            //        DashboardId = 1,
+            //        Current = "15",
+            //        Indicator = "TESTE 1",
+            //        General = "10",
+            //        Type = "1"
+            //    },
+            //    new GroupItem
+            //    {
+            //        DashboardId = 2,
+            //        Current = "18",
+            //        Indicator = "TESTE 2",
+            //        General = "20",
+            //        Type = "2"
+            //    },
+            //    new GroupItem
+            //    {
+            //        DashboardId = 3,
+            //        Current = "21",
+            //        Indicator = "TESTE 3",
+            //        General = "30",
+            //        Type = "3"
+            //    },
+            //};
+
+            foreach (var group in _groups)
+            {
+                Groups.Add(await CreateGroup(group.Description, group.Items));
+            }
         }
 
         private async Task<ListViewGroup<ListViewItem>> CreateGroup(string description, List<GroupItem> items)
@@ -92,8 +89,8 @@ namespace AppKpi.viewmodel
                     Id = item.DashboardId,
                     Title = item.Indicator,
                     ItemCommand = command,
-                    General = item.General,
-                    Current = item.Current
+                    General = string.Format("{0:N}", item.General),
+                    Current = string.Format("{0:N}", item.Current)
                 });
             }
 
@@ -103,12 +100,12 @@ namespace AppKpi.viewmodel
         private async void GetDetailKpi(ListViewItem item)
         {
             var loadVm = new LoadChartViewModel(_messageService, _pageService, _apiService, item.Id.Value);
-            await _pageService.PushAsyncAndRemoveCurrent(new LoadPage(loadVm));
+            await _pageService.PushAsync(new LoadPage(loadVm));
         }
 
-        private async void GoBack()
+        private void GoBack()
         {
-            await _pageService.PopAsync();
+            //_pageService.PopAsync();
         }
     }
 }

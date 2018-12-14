@@ -1,11 +1,10 @@
 ﻿using Newtonsoft.Json;
-using SQLite;
 
 namespace AppKpi.model
 {
     public class GroupItem
     {
-        [JsonProperty("cod_dashboard")]
+        [JsonProperty("cod")]
         public int DashboardId { get; set; }
 
         [JsonProperty("type")]
@@ -15,9 +14,9 @@ namespace AppKpi.model
         public string Indicator { get; set; }
 
         [JsonProperty("general")]
-        public string General { get; set; }
+        public decimal General { get; set; }
 
         [JsonProperty("current")]
-        public string Current { get; set; }
+        public decimal Current { get; set; }
     }
 }

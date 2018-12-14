@@ -1,15 +1,13 @@
-﻿using System.Collections.Generic;
-using AppKpi.model;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace AppKpi.api.response.model
 {
     public class ChartEntry
     {
-        [JsonProperty("label")]
+        [JsonProperty("provider")]
         public string Description { get; set; }
 
-        [JsonProperty("value")]
+        [JsonProperty("percentage")]
         public string Value { get; set; }
     }
 }

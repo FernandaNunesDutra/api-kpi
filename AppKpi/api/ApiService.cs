@@ -11,8 +11,8 @@ namespace AppKpi.api
     {
         private static string URL_BASE = "http://indicadoresapi.azurewebsites.net/api/";
         private static string URL_POST_LOGIN = URL_BASE + "acesso/logar";
-        private static string URL_GET_DASHBOARD = URL_BASE + "dashboard/lista?type={0}";
-        private static string URL_GET_CHART = URL_BASE + "";
+        private static string URL_GET_DASHBOARD = URL_BASE + "dashboard/lista?tipo={0}";
+        private static string URL_GET_CHART = URL_BASE + "dashboard/detalhes?tipo={0}";
         private static RequestService _requestService;
 
         public ApiService(SQLiteAsyncConnection connection)

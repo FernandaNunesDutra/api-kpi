@@ -26,60 +26,31 @@ namespace AppKpi.viewmodel.load
 
         public async Task Load()
         {
-            await _pageService.PushAsync(new ChartPage(ToMicrochartEntry(new List<ChartEntry>())));
-            //var response = await _apiService.GetChartData(_idChart);
+            var response = await _apiService.GetChartData(_idChart);
 
-            //if (response.Success)
-            //{
-            //    await _pageService.PushAsyncAndRemoveCurrent(new ChartPage(ToMicrochartEntry(response.Data)));
-            //}
-            //else
-            //{
-            //    _messageService.ShortAlert(response.ErrorDescription);
-            //    await _pageService.PopAsync();
-            //}
+            if (response.Success)
+            {
+                await _pageService.PushAsyncAndRemoveCurrent(new ChartPage(ToMicrochartEntry(response.Data)));
+            }
+            else
+            {
+                _messageService.ShortAlert(response.ErrorDescription);
+                await _pageService.PopAsync();
+            }
         }
 
 
         private List<Microcharts.Entry> ToMicrochartEntry(List<ChartEntry> items)
         {
-
-            return new List<Microcharts.Entry>
-            {
-                new Microcharts.Entry(200)
-                {
-                    Label = "Janeiro",
-                    ValueLabel = "200",
-                    Color = SKColor.Parse("#266489")
-                },
-                new Microcharts.Entry(250)
-                {
-                    Label = "Fevereiro",
-                    ValueLabel = "250",
-                    Color = SKColor.Parse("#68B9C0")
-                },
-                new Microcharts.Entry(100)
-                {
-                    Label = "Março",
-                    ValueLabel = "100",
-                    Color = SKColor.Parse("#90D585")
-                },
-                new Microcharts.Entry(150)
-                {
-                    Label = "Abril",
-                    ValueLabel = "150",
-                    Color = SKColor.Parse("#e77e23")
-                }
-            };
-
             var entries = new List<Microcharts.Entry>();
 
             foreach (var item in items)
             {
-                entries.Add(new Microcharts.Entry(200)
+                var value = int.Parse(decimal.Parse(item.Value).ToString());
+                entries.Add(new Microcharts.Entry(value)
                 {
                     Label = item.Description,
-                    ValueLabel = item.Value,
+                    ValueLabel = value.ToString(),
                     Color = SKColor.Parse("#266489")
                 });
             }

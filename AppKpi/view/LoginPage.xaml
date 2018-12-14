@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<view:BasePage x:TypeArguments="viewmodel:LoginViewModel" 
+                xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:markupextensions="clr-namespace:AppKpi.markupextensions;assembly=AppKpi"
+             xmlns:view="clr-namespace:AppKpi.view;assembly=AppKpi"
+             xmlns:viewmodel="clr-namespace:AppKpi.viewmodel;assembly=AppKpi"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="WhiteSmoke"
              x:Class="AppKpi.view.LoginPage">
@@ -15,4 +18,4 @@
             <Button Text="Login" TextColor="White" BackgroundColor="#2177A3" VerticalOptions="EndAndExpand"  Command="{Binding LoginCommand}"/>
         </StackLayout>
     </ContentPage.Content>
-</ContentPage>
+</view:BasePage>

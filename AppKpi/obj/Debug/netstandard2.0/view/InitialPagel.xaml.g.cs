@@ -14,7 +14,7 @@ namespace AppKpi.view {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("view\\InitialPagel.xaml")]
-    public partial class InitialPage : global::Xamarin.Forms.ContentPage {
+    public partial class InitialPage : global::AppKpi.view.BasePage<global::AppKpi.viewmodel.InitialViewModel> {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {

@@ -10,26 +10,20 @@ using Xamarin.Forms.Xaml;
 namespace AppKpi.view
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class InitialPage : ContentPage
-	{
-	    public InitialViewModel ViewModel
-	    {
-	        get => BindingContext as InitialViewModel;
-	        set => BindingContext = value;
-	    }
-
-        public InitialPage (List<Group> groups)
-		{
-			InitializeComponent ();
-		    var message = DependencyService.Get<IMessageService>();
-		    var connection = DependencyService.Get<ISQLiteDb>().GetConnection();
-            ViewModel = new InitialViewModel(message, new PageService(), new ApiService(connection), groups);		    
+    public partial class InitialPage : BasePage<InitialViewModel>
+    {
+        public InitialPage(List<Group> groups)
+        {
+            InitializeComponent();
+            var message = DependencyService.Get<IMessageService>();
+            var connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+            ViewModel = new InitialViewModel(message, new PageService(), new ApiService(connection), groups);
         }
 
         protected override void OnAppearing()
-	    {
-	        base.OnAppearing();
+        {
+            base.OnAppearing();
             ViewModel.Load();
-	    }
-	}
+        }
+    }
 }
