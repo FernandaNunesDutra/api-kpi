@@ -6,6 +6,8 @@ using AppKpi.service;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using Microcharts;
+using SkiaSharp;
 using Xamarin.Forms;
 
 namespace AppKpi.viewmodel
@@ -69,7 +71,7 @@ namespace AppKpi.viewmodel
         private async Task<ListViewGroup<ListViewItem>> CreateGroup(string description, List<GroupItem> items)
         {
 
-           var command = new Command<ListViewItem>(GetDetailKpi);
+            var command = new Command<ListViewItem>(GetDetailKpi);
 
             var group = new ListViewGroup<ListViewItem>
             {
@@ -78,7 +80,7 @@ namespace AppKpi.viewmodel
 
             foreach (var item in items)
             {
-                
+
                 group.Add(new ListViewItem
                 {
                     Id = item.DashboardId,

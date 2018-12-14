@@ -2,11 +2,15 @@ C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\AppKpi.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\FormsViewGroup.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\Java.Interop.dll
+C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\Microcharts.Forms.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\Mono.Android.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\mscorlib.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\Newtonsoft.Json.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\Plugin.Connectivity.Abstractions.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\Plugin.Connectivity.dll
+C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\SkiaSharp.dll
+C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\SkiaSharp.Views.Android.dll
+C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\SkiaSharp.Views.Forms.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\SQLite-net.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\SQLitePCLRaw.batteries_green.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\SQLitePCLRaw.batteries_v2.dll
@@ -72,6 +76,7 @@ C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\System.Runtime.InteropServices.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\System.Runtime.Extensions.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\System.Reflection.Extensions.dll
+C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\System.ValueTuple.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\System.Threading.Tasks.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\System.Globalization.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\Mono.Security.dll

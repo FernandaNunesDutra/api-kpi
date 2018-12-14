@@ -108,9 +108,7 @@ C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\System.Xml.pdb
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\android\assets\Xamarin.Forms.Xaml.pdb
-C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi\bin\Debug\netstandard2.0\AppKpi.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\linksrc\AppKpi.Android.pdb
-C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\bin\Debug\AppKpi.dll.mdb
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\linksrc\AppKpi.dll.mdb
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\linksrc\FormsViewGroup.dll.mdb
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi.Android\obj\Debug\MonoAndroid81\linksrc\Plugin.Connectivity.dll.mdb

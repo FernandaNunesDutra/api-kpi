@@ -25,9 +25,9 @@
                             <Frame Style="{StaticResource RoundFrame}">
                                 <StackLayout Orientation="Vertical">
                                     <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                                        <!--<StackLayout.GestureRecognizers>
+                                        <StackLayout.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding ItemCommand}" CommandParameter="{Binding .}" />
-                                        </StackLayout.GestureRecognizers>-->
+                                        </StackLayout.GestureRecognizers>
                                         <Label Text="{Binding Title}" FontSize="Default" />
                                         <Label Text="{Binding General}" FontSize="Default" HorizontalOptions="EndAndExpand"/>
                                         <Label Text="{Binding Current}" FontSize="Default" TextColor="#2177A3"/>

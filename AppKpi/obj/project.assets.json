@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "Microcharts.Forms/0.6.2": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp.Views.Forms": "1.59.1"
+        },
+        "compile": {
+          "lib/portable-net45+win8+wpa81+wp8/Microcharts.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81+wp8/Microcharts.Forms.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
         "compile": {
@@ -33,6 +45,50 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "SkiaSharp/1.68.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.3/SkiaSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/SkiaSharp.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/osx/native/libSkiaSharp.dylib": {
+            "assetType": "native",
+            "rid": "osx"
+          },
+          "runtimes/tizen-armel/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "tizen-armel"
+          },
+          "runtimes/tizen-x86/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "tizen-x86"
+          },
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "SkiaSharp.Views.Forms/1.59.1": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.59.1",
+          "Xamarin.Forms": "2.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/SkiaSharp.Views.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/SkiaSharp.Views.Forms.dll": {}
         }
       },
       "sqlite-net-pcl/1.5.231": {
@@ -109,6 +165,17 @@
     }
   },
   "libraries": {
+    "Microcharts.Forms/0.6.2": {
+      "sha512": "4LIDFEiuQvZMThNAGIqaJBCV4lxagKsECyJDTgxAZsTNWAmjUiL4CeyliAnEo5/y6GCgt6o80kJeGlEARBRM6w==",
+      "type": "package",
+      "path": "microcharts.forms/0.6.2",
+      "files": [
+        ".signature.p7s",
+        "lib/portable-net45+win8+wpa81+wp8/Microcharts.Forms.dll",
+        "microcharts.forms.0.6.2.nupkg.sha512",
+        "microcharts.forms.nuspec"
+      ]
+    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
@@ -285,6 +352,69 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.12.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec"
+      ]
+    },
+    "SkiaSharp/1.68.0": {
+      "sha512": "F8Nh6ws9WGVCddQb509Xl4lCIOu786Oc27t9LxPbuPZU7Olw6jVO2X6iqmHrwY+MZQXQXD4DeK5LU8vfiNwTCg==",
+      "type": "package",
+      "path": "skiasharp/1.68.0",
+      "files": [
+        ".signature.p7s",
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/net45/SkiaSharp.targets",
+        "build/tizen40/SkiaSharp.targets",
+        "lib/MonoAndroid/SkiaSharp.dll",
+        "lib/MonoAndroid/SkiaSharp.xml",
+        "lib/Xamarin.Mac20/SkiaSharp.dll",
+        "lib/Xamarin.Mac20/SkiaSharp.xml",
+        "lib/Xamarin.TVOS/SkiaSharp.dll",
+        "lib/Xamarin.TVOS/SkiaSharp.xml",
+        "lib/Xamarin.WatchOS/SkiaSharp.dll",
+        "lib/Xamarin.WatchOS/SkiaSharp.xml",
+        "lib/Xamarin.iOS/SkiaSharp.dll",
+        "lib/Xamarin.iOS/SkiaSharp.xml",
+        "lib/net45/SkiaSharp.dll",
+        "lib/net45/SkiaSharp.xml",
+        "lib/netstandard1.3/SkiaSharp.dll",
+        "lib/netstandard1.3/SkiaSharp.xml",
+        "lib/tizen40/SkiaSharp.dll",
+        "lib/tizen40/SkiaSharp.xml",
+        "lib/uap10.0/SkiaSharp.dll",
+        "lib/uap10.0/SkiaSharp.xml",
+        "runtimes/osx/native/libSkiaSharp.dylib",
+        "runtimes/tizen-armel/native/libSkiaSharp.so",
+        "runtimes/tizen-x86/native/libSkiaSharp.so",
+        "runtimes/win-x64/native/libSkiaSharp.dll",
+        "runtimes/win-x86/native/libSkiaSharp.dll",
+        "runtimes/win10-arm/nativeassets/uap10.0/libEGL.dll",
+        "runtimes/win10-arm/nativeassets/uap10.0/libGLESv2.dll",
+        "runtimes/win10-arm/nativeassets/uap10.0/libSkiaSharp.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/libEGL.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/libGLESv2.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/libSkiaSharp.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/libEGL.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/libGLESv2.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/libSkiaSharp.dll",
+        "skiasharp.1.68.0.nupkg.sha512",
+        "skiasharp.nuspec",
+        "xamarin.interactive/SkiaSharp.Workbooks.dll"
+      ]
+    },
+    "SkiaSharp.Views.Forms/1.59.1": {
+      "sha512": "hmCjxrKTjFxSYP1Hmev1bh1oBCSsSN4O0ZZXnyr1YAkRXXqIkliROrfizuXu5kVygvbRc+SdryA3tJ7Zn+uIqw==",
+      "type": "package",
+      "path": "skiasharp.views.forms/1.59.1",
+      "files": [
+        ".signature.p7s",
+        "lib/MonoAndroid/SkiaSharp.Views.Forms.dll",
+        "lib/XamarinMac/SkiaSharp.Views.Forms.dll",
+        "lib/XamariniOS/SkiaSharp.Views.Forms.dll",
+        "lib/netstandard1.3/SkiaSharp.Views.Forms.dll",
+        "lib/portable-net45+win8+wpa81+wp8/SkiaSharp.Views.Forms.dll",
+        "lib/uap10.0/SkiaSharp.Views.Forms.dll",
+        "skiasharp.views.forms.1.59.1.nupkg.sha512",
+        "skiasharp.views.forms.nuspec"
       ]
     },
     "sqlite-net-pcl/1.5.231": {
@@ -590,8 +720,10 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Microcharts.Forms >= 0.6.2",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.1",
+      "SkiaSharp >= 1.68.0",
       "Xam.Plugin.Connectivity >= 3.2.0",
       "Xamarin.Forms >= 3.3.0.912540",
       "sqlite-net-pcl >= 1.5.231"
@@ -639,6 +771,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "Microcharts.Forms": {
+            "target": "Package",
+            "version": "[0.6.2, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
@@ -648,6 +784,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[12.0.1, )"
+          },
+          "SkiaSharp": {
+            "target": "Package",
+            "version": "[1.68.0, )"
           },
           "Xam.Plugin.Connectivity": {
             "target": "Package",
@@ -669,5 +809,17 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microcharts.Forms 0.6.2' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microcharts.Forms",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

@@ -1,8 +1,12 @@
 AppKpi
 FormsViewGroup
+Microcharts.Forms
 Newtonsoft.Json
 Plugin.Connectivity.Abstractions
 Plugin.Connectivity
+SkiaSharp
+SkiaSharp.Views.Android
+SkiaSharp.Views.Forms
 SQLite-net
 SQLitePCLRaw.batteries_green
 SQLitePCLRaw.batteries_v2
