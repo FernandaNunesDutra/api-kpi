@@ -12,6 +12,7 @@ namespace AppKpi.api
         private static string URL_BASE = "http://indicadoresapi.azurewebsites.net/api/";
         private static string URL_POST_LOGIN = URL_BASE + "acesso/logar";
         private static string URL_GET_DASHBOARD = URL_BASE + "dashboard/lista?type={0}";
+        private static string URL_GET_CHART = URL_BASE + "";
         private static RequestService _requestService;
 
         public ApiService(SQLiteAsyncConnection connection)
@@ -28,5 +29,11 @@ namespace AppKpi.api
         {
             return await _requestService.GetData<List<Group>>(string.Format(URL_GET_DASHBOARD, type));
         }
+
+        public async Task<Response<List<ChartEntry>>> GetChartData(int type)
+        {
+            return await _requestService.GetData<List<ChartEntry>>(string.Format(URL_GET_CHART, type));
+        }
+        
     }
 }

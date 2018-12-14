@@ -1,8 +1,10 @@
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi\bin\Debug\netstandard2.0\AppKpi.deps.json
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi\bin\Debug\netstandard2.0\AppKpi.dll
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi\bin\Debug\netstandard2.0\AppKpi.pdb
+C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi\obj\Debug\netstandard2.0\AppKpi.csprojAssemblyReference.cache
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi\obj\Debug\netstandard2.0\view\ChartPage.xaml.g.cs
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi\obj\Debug\netstandard2.0\view\InitialPagel.xaml.g.cs
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi\obj\Debug\netstandard2.0\view\LoadPage.xaml.g.cs
 C:\Users\ferna\source\repos\AppKpi\AppKpi\AppKpi\obj\Debug\netstandard2.0\view\LoginPage.xaml.g.cs

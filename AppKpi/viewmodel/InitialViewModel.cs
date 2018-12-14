@@ -6,6 +6,8 @@ using AppKpi.service;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using AppKpi.view;
+using AppKpi.viewmodel.load;
 using Microcharts;
 using SkiaSharp;
 using Xamarin.Forms;
@@ -21,11 +23,12 @@ namespace AppKpi.viewmodel
 
         public ObservableCollection<ListViewGroup<ListViewItem>> Groups { get; set; }
 
-        public InitialViewModel(IMessageService messageService, PageService pageService, List<Group> groups)
+        public InitialViewModel(IMessageService messageService, PageService pageService, ApiService apiService, List<Group> groups)
         {
             Groups = new ObservableCollection<ListViewGroup<ListViewItem>>();
             _messageService = messageService;
             _pageService = pageService;
+            _apiService = apiService;
             _groups = groups;
         }
 
@@ -96,7 +99,8 @@ namespace AppKpi.viewmodel
 
         private async void GetDetailKpi(ListViewItem item)
         {
-            //await _pageService.PushAsync(new NewInventorySectionDetailsPage(_localInventoryOrderId, assignment, true));
+            var loadVm = new LoadChartViewModel(_messageService, _pageService, _apiService, item.Id.Value);
+            await _pageService.PushAsyncAndRemoveCurrent(new LoadPage(loadVm));
         }
     }
 }

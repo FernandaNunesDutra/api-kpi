@@ -1,7 +1,9 @@
 ﻿using Android.App;
 using Android.Widget;
 using AppKpi.dependencyservice;
+using AppKpi.Droid.dependencyservice;
 
+[assembly: Xamarin.Forms.Dependency(typeof(MessageService))]
 namespace AppKpi.Droid.dependencyservice
 {
     public class MessageService : IMessageService
